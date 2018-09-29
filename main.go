@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/zhuyanxi/Leetcode/DataStructure"
 )
 
 func main() {
@@ -22,10 +24,21 @@ func main() {
 	// t2 := time.Now().UnixNano()
 	// fmt.Println("time:", t2-t1)
 
-	a := make([]int, 0, 5)
-	printSlice("a", a)
-	a = append(a, 4)
-	printSlice("a", a)
+	// a := make([]int, 0, 5)
+	// printSlice("a", a)
+	// a = append(a, 4)
+	// printSlice("a", a)
+	// a = append(a, 5, 6, 7, 8)
+	// printSlice("a", a)
+	// a = append(a[:0], a[1:]...)
+	// printSlice("a", a)
+
+	obj := DataStructure.Constructor(5)
+	fmt.Println(obj)
+	param1 := obj.EnQueue(2)
+	fmt.Println(obj, param1)
+	param2 := obj.EnQueue(4)
+	fmt.Println(obj, param2)
 }
 
 func printSlice(s string, x []int) {
