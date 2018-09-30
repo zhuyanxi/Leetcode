@@ -32,13 +32,24 @@ func main() {
 	// printSlice("a", a)
 	// a = append(a[:0], a[1:]...)
 	// printSlice("a", a)
+	param1 := true
 
-	obj := DataStructure.Constructor(5)
+	obj := DataStructure.Constructor(3)
 	fmt.Println(obj)
-	param1 := obj.EnQueue(2)
+	param1 = obj.EnQueue(1)
 	fmt.Println(obj, param1)
-	param2 := obj.EnQueue(4)
-	fmt.Println(obj, param2)
+	param1 = obj.EnQueue(2)
+	fmt.Println(obj, param1)
+	param1 = obj.EnQueue(3)
+	fmt.Println(obj, param1)
+	param1 = obj.EnQueue(4)
+	fmt.Println(obj, param1)
+	// param1 = obj.DeQueue()
+	// fmt.Println(obj, param1)
+	// param1 = obj.EnQueue(4)
+	// fmt.Println(obj, param1)
+	// param1 = obj.EnQueue(2)
+	// fmt.Println(obj, param1)
 }
 
 func printSlice(s string, x []int) {

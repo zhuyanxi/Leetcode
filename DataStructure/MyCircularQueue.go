@@ -19,12 +19,8 @@ func (this *MyCircularQueue) EnQueue(value int) bool {
 		return false
 	}
 
-	tail := 0
-	if this.tail < this.size-1 {
-		tail = this.tail + 1
-	}
-	this.data[tail] = value
-	this.tail = tail
+	this.tail = (this.tail + 1) % this.size
+	this.data[this.tail] = value
 
 	if this.head == -1 {
 		this.head = 0
@@ -44,11 +40,7 @@ func (this *MyCircularQueue) DeQueue() bool {
 		this.head = -1
 		this.tail = -1
 	} else {
-		if this.head == this.size-1 {
-			this.head = 0
-		} else {
-			this.head = this.head + 1
-		}
+		this.head = (this.head + 1) % this.size
 	}
 
 	return true
@@ -77,7 +69,7 @@ func (this *MyCircularQueue) IsEmpty() bool {
 
 //IsFull Checks whether the circular queue is full or not.
 func (this *MyCircularQueue) IsFull() bool {
-	return this.head+this.tail == this.size
+	return (this.tail+1)%this.size == this.head
 }
 
 /**
