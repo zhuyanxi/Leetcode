@@ -1,4 +1,27 @@
-package DataStructure
+package datastructure
+
+import "fmt"
+
+func TestMyCircularQueue() {
+	param1 := true
+
+	obj := ConstructorCQ(3)
+	fmt.Println(obj)
+	param1 = obj.EnQueue(1)
+	fmt.Println(obj, param1)
+	param1 = obj.EnQueue(2)
+	fmt.Println(obj, param1)
+	param1 = obj.EnQueue(3)
+	fmt.Println(obj, param1)
+	param1 = obj.EnQueue(4)
+	fmt.Println(obj, param1)
+	// param1 = obj.DeQueue()
+	// fmt.Println(obj, param1)
+	// param1 = obj.EnQueue(4)
+	// fmt.Println(obj, param1)
+	// param1 = obj.EnQueue(2)
+	// fmt.Println(obj, param1)
+}
 
 //MyCircularQueue :
 type MyCircularQueue struct {
@@ -9,7 +32,7 @@ type MyCircularQueue struct {
 }
 
 //Constructor Initialize your data structure here. Set the size of the queue to be k.
-func Constructor(k int) MyCircularQueue {
+func ConstructorCQ(k int) MyCircularQueue {
 	return MyCircularQueue{make([]int, k), -1, -1, k}
 }
 
