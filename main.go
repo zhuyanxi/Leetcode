@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	datastructure "github.com/zhuyanxi/Leetcode/DataStructure"
 )
 
 func main() {
@@ -13,7 +11,8 @@ func main() {
 	// s := primes[1:5]
 	// printSlice("s", s)
 
-	datastructure.TestMinStack()
+	//datastructure.TestMinStack()
+	TestIsValidBrackets()
 }
 
 func printSlice(s string, x []int) {
