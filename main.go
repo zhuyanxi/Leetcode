@@ -7,7 +7,7 @@ import (
 func main() {
 	fmt.Println("hello")
 
-	//primes := [6]int{2, 3, 5, 7, 11, 13}
+	//primes := [6]int{2, 3, 3, 7, 7, 13}
 	// s := primes[1:5]
 	// printSlice("s", s)
 
@@ -18,10 +18,16 @@ func main() {
 	// r := sumSlice(primes[6:])
 	// fmt.Println(r)
 	//testPivotIndex()
-	TestDominantIndex()
+	//TestDominantIndex()
+	//removeDuplicates(primes[:])
+	fmt.Println(reverseString("A man, a plan, a canal: Panama"))
 }
 
 func printSlice(s string, x []int) {
 	fmt.Printf("%s len=%d cap=%d %v\n",
 		s, len(x), cap(x), x)
+}
+
+func addBinary(a string, b string) string {
+	return ""
 }

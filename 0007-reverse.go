@@ -43,14 +43,11 @@ func reverseFast(x int) int {
 	absX := int(math.Abs(float64(x)))
 
 	for absX > 0 {
-
 		tmp := result*10 + absX%10
 		if tmp/10 != result {
 			return 0
 		}
-
 		result = tmp
-
 		absX = absX / 10
 	}
 	if result > math.MaxInt32 || result < math.MinInt32 {
