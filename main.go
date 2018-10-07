@@ -20,7 +20,8 @@ func main() {
 	//testPivotIndex()
 	//TestDominantIndex()
 	//removeDuplicates(primes[:])
-	fmt.Println(reverseString("A man, a plan, a canal: Panama"))
+	//fmt.Println(reverseString("A man, a plan, a canal: Panama"))
+	testFirstUniqChar()
 }
 
 func printSlice(s string, x []int) {
