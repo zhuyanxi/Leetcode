@@ -21,7 +21,8 @@ func main() {
 	//TestDominantIndex()
 	//removeDuplicates(primes[:])
 	//fmt.Println(reverseString("A man, a plan, a canal: Panama"))
-	testFirstUniqChar()
+	//testFirstUniqChar()
+	testIsAnagram()
 }
 
 func printSlice(s string, x []int) {
