@@ -22,7 +22,8 @@ func main() {
 	//removeDuplicates(primes[:])
 	//fmt.Println(reverseString("A man, a plan, a canal: Panama"))
 	//testFirstUniqChar()
-	testIsAnagram()
+	//testIsAnagram()
+	testIsPalindrome()
 }
 
 func printSlice(s string, x []int) {
