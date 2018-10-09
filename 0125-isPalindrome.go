@@ -25,14 +25,6 @@ func isPalindrome(s string) bool {
 	return true
 }
 
-func isNumber(b byte) bool {
-	return b >= 48 && b <= 57
-}
-
-func isLowerAlphabet(b byte) bool {
-	return b >= 97 && b <= 122
-}
-
 func testIsPalindrome() {
 	s := "A man, a plan, a canal: Panama"
 	fmt.Println(isPalindrome(s))

@@ -23,14 +23,6 @@ func main() {
 	//fmt.Println(reverseString("A man, a plan, a canal: Panama"))
 	//testFirstUniqChar()
 	//testIsAnagram()
-	testIsPalindrome()
-}
-
-func printSlice(s string, x []int) {
-	fmt.Printf("%s len=%d cap=%d %v\n",
-		s, len(x), cap(x), x)
-}
-
-func addBinary(a string, b string) string {
-	return ""
+	//testIsPalindrome()
+	testMyAtoi()
 }
