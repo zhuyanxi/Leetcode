@@ -26,7 +26,7 @@ func myAtoi(str string) int {
 	sum := 0
 	hasSymbol := false
 	hasSpace := false
-	hasZero := false
+	hasBeginZero := false
 	var s []byte
 	for i := 0; i < len(str); i++ {
 		if str[i] != 32 {
@@ -58,21 +58,17 @@ func myAtoi(str string) int {
 	}
 	for i := 0; i < len(s); i++ {
 		v := s[i]
-		if v != '0' && !hasZero {
-			hasZero = true
-			temp := math.Pow10(i)
+		if v != '0' {
+			hasBeginZero = true
+			temp := math.Pow10(len(s) - 1 - i)
 			sum += int(temp) * int(v-'0')
-		}
-	}
-	if lenS >= 19 {
-		if s[0] == '-' {
-			sum = math.MinInt32
 		} else {
-			sum = math.MaxInt32
+			if !hasBeginZero {
+				lenS--
+			}
 		}
-		return sum
 	}
-	if sum > math.MaxInt32 {
+	if lenS >= 19 || sum > math.MaxInt32 {
 		if isMinus {
 			sum = math.MinInt32
 		} else {
@@ -86,8 +82,57 @@ func myAtoi(str string) int {
 	return sum
 }
 
+func myAtoiFast(str string) int {
+	length := len(str)
+	hasSymbol := false
+	isStartZero := false
+	MAX := 2 << 30
+	var sum int64
+	for i := 0; i < length; i++ {
+		if str[i] == ' ' && !isStartZero {
+			continue
+		}
+		if str[i] == '-' {
+			if isStartZero {
+				break
+			}
+			hasSymbol = true
+			isStartZero = true
+			continue
+		}
+		if str[i] == '+' {
+			if isStartZero {
+				break
+			}
+			isStartZero = true
+			continue
+		}
+		if str[i] >= '0' && str[i] <= '9' {
+			sum = sum*10 + int64(str[i]-'0')
+			if sum > int64(MAX) {
+				break
+			}
+			isStartZero = true
+			continue
+		}
+		break
+
+	}
+	if hasSymbol && sum > int64(MAX) {
+		return -MAX
+	}
+	if !hasSymbol && sum >= int64(MAX) {
+		return MAX - 1
+	}
+
+	if hasSymbol {
+		return int(-sum)
+	}
+	return int(sum)
+}
+
 func testMyAtoi() {
-	s := "  0000000000012345678"
+	s := "  -10000000001234567890"
 	//s := "200"
 	fmt.Println(myAtoi(s))
 }
