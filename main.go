@@ -24,5 +24,6 @@ func main() {
 	//testFirstUniqChar()
 	//testIsAnagram()
 	//testIsPalindrome()
-	testMyAtoi()
+	//testMyAtoi()
+	testStrStr()
 }
