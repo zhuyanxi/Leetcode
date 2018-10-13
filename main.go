@@ -25,5 +25,6 @@ func main() {
 	//testIsAnagram()
 	//testIsPalindrome()
 	//testMyAtoi()
-	testStrStr()
+	//testStrStr()
+	testCountAndSay()
 }
