@@ -26,5 +26,6 @@ func main() {
 	//testIsPalindrome()
 	//testMyAtoi()
 	//testStrStr()
-	testCountAndSay()
+	//testCountAndSay()
+	testLongestCommonPrefix()
 }
