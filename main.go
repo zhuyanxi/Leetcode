@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
@@ -27,5 +28,9 @@ func main() {
 	//testMyAtoi()
 	//testStrStr()
 	//testCountAndSay()
-	testLongestCommonPrefix()
+	//testLongestCommonPrefix()
+	t1 := time.Now()
+	testThreeSum()
+	elapsed := time.Since(t1)
+	fmt.Println("Execute time: ", elapsed)
 }
