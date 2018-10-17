@@ -8,6 +8,7 @@ import (
 func main() {
 	fmt.Println("hello")
 
+	t1 := time.Now()
 	//primes := [6]int{2, 3, 3, 7, 7, 13}
 	// s := primes[1:5]
 	// printSlice("s", s)
@@ -29,8 +30,9 @@ func main() {
 	//testStrStr()
 	//testCountAndSay()
 	//testLongestCommonPrefix()
-	t1 := time.Now()
-	testThreeSum()
+	//testThreeSum()
+	testIsPalindromeInt()
+
 	elapsed := time.Since(t1)
 	fmt.Println("Execute time: ", elapsed)
 }
