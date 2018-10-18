@@ -8,7 +8,7 @@ import (
 func main() {
 	fmt.Println("hello")
 
-	t1 := time.Now()
+	defer timeCost(time.Now())
 	//primes := [6]int{2, 3, 3, 7, 7, 13}
 	// s := primes[1:5]
 	// printSlice("s", s)
@@ -31,8 +31,14 @@ func main() {
 	//testCountAndSay()
 	//testLongestCommonPrefix()
 	//testThreeSum()
-	testIsPalindromeInt()
+	//testIsPalindromeInt()
+	testClimbStairs()
 
-	elapsed := time.Since(t1)
-	fmt.Println("Execute time: ", elapsed)
+	//elasp := time.Since(t1)
+	//fmt.Println("Execute time: ", elasp)
+}
+
+func timeCost(start time.Time) {
+	terminal := time.Since(start)
+	fmt.Println("Execute time: ", terminal)
 }
