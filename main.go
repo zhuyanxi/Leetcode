@@ -32,7 +32,8 @@ func main() {
 	//testLongestCommonPrefix()
 	//testThreeSum()
 	//testIsPalindromeInt()
-	testClimbStairs()
+	//testClimbStairs()
+	testAddTwoNumbers()
 
 	//elasp := time.Since(t1)
 	//fmt.Println("Execute time: ", elasp)
