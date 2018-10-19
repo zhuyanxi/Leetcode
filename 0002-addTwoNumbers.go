@@ -63,18 +63,18 @@ func addTwoNumbers(l1 *datastructure.ListNode, l2 *datastructure.ListNode) *data
 		ss = append(ss, overnum)
 	}
 	for i := len(ss) - 1; i >= 0; i-- {
-		result = &datastructure.ListNode{ss[i], result}
+		result = &datastructure.ListNode{Val: ss[i], Next: result}
 	}
 	return result
 }
 
 func testAddTwoNumbers() {
-	m := &datastructure.ListNode{2, nil}
-	m = &datastructure.ListNode{3, m}
-	m = &datastructure.ListNode{4, m}
+	m := &datastructure.ListNode{Val: 2, Next: nil}
+	m = &datastructure.ListNode{Val: 3, Next: m}
+	m = &datastructure.ListNode{Val: 4, Next: m}
 
-	n := &datastructure.ListNode{9, nil}
-	n = &datastructure.ListNode{4, n}
+	n := &datastructure.ListNode{Val: 9, Next: nil}
+	n = &datastructure.ListNode{Val: 4, Next: n}
 
 	s := addTwoNumbers(m, n)
 	for s != nil {
