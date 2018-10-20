@@ -33,7 +33,8 @@ func main() {
 	//testThreeSum()
 	//testIsPalindromeInt()
 	//testClimbStairs()
-	testAddTwoNumbers()
+	//testAddTwoNumbers()
+	testLengthOfLongestSubstring()
 
 	//elasp := time.Since(t1)
 	//fmt.Println("Execute time: ", elasp)
