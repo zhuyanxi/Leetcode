@@ -1,23 +1,49 @@
 package tree
 
-// Node is a binary tree
-type Node struct {
+import (
+	"fmt"
+	"math/rand"
+)
+
+// A Tree is a binary tree with integer values.
+type Tree struct {
+	Left  *Tree
 	Val   int
-	Left  *Node
-	Right *Node
+	Right *Tree
 }
 
-// Root return the root value of the tree
-func (n *Node) Root() int {
-	return n.Val
+// New returns a new, random binary tree holding the values k, 2k, ..., 10k.
+func New(k int) *Tree {
+	var t *Tree
+	for _, v := range rand.Perm(10) {
+		t = insert(t, (1+v)*k)
+	}
+	return t
 }
 
-// Next return the next node, the order is from top to bottom and from left to right
-func (n *Node) Next() *Node {
-	return nil
+func insert(t *Tree, v int) *Tree {
+	if t == nil {
+		return &Tree{nil, v, nil}
+	}
+	if v < t.Val {
+		t.Left = insert(t.Left, v)
+	} else {
+		t.Right = insert(t.Right, v)
+	}
+	return t
 }
 
-// NextVal return the next value of the tree, the order is from top to bottom and from left to right
-func (n *Node) NextVal() *int {
-	return nil
+func (t *Tree) String() string {
+	if t == nil {
+		return "()"
+	}
+	s := ""
+	if t.Left != nil {
+		s += t.Left.String() + " "
+	}
+	s += fmt.Sprint(t.Val)
+	if t.Right != nil {
+		s += " " + t.Right.String()
+	}
+	return "(" + s + ")"
 }
